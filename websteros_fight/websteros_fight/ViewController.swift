@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     var characters_list = ["Cersei Lannister", "Jaime Lannister", "Tyrion Lannister", "Sansa Stark", "Arya Stark", "Samwell Tarly", "Le Roi de la Nuit", "Ellaria Sand", "Jon Snow"]
+    var result_battle : String = ""
     var character_chosen: [String] = []
     var _currentCharacter : Double = 0 {
         didSet{
@@ -19,7 +20,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var ui_result: UILabel!
     
     @IBAction func ui_launch() {
-        
+        ui_result.text? = result_battle
     }
     
     
@@ -36,11 +37,49 @@ class ViewController: UIViewController {
                     }
                     if character_chosen.count == 2{
                         ui_result.text? = character_chosen[0] + " contre " + character_chosen[1]
+                        if character_chosen[0] == character_chosen[1]{
+                           result_battle = "Impossible de se combattre soi-même"
+                        }
+                        else if (character_chosen[0] == "Cersei Lannister" &&  character_chosen[1] == "Jaime Lannister") || (character_chosen[0] == "Jaime Lannister" &&  character_chosen[1] == "Cersei Lannister") {
+                            result_battle = "Jaime l'emporte face à Cersei"
+                        }
+                            
+                        else if (character_chosen[0] == "Cersei Lannister" &&  character_chosen[1] == "Sansa Stark") || (character_chosen[0] == "Sansa Stark" &&  character_chosen[1] == "Cersei Lannister") {
+                            result_battle = "Sansa l'emporte face à Cersei"
+                        }
+                            
+                        else if (character_chosen[0] == "Cersei Lannister" &&  character_chosen[1] == "Arya Stark") || (character_chosen[0] == "Arya Stark" &&  character_chosen[1] == "Cersei Lannister") {
+                            result_battle = "Arya Stark l'emporte face à Cersei"
+                        }
+                        
+                        else if (character_chosen[0] == "Cersei Lannister" &&  character_chosen[1] == "Arya Stark") || (character_chosen[0] == "Arya Stark" &&  character_chosen[1] == "Cersei Lannister") {
+                            result_battle = "Arya Stark l'emporte face à Cersei"
+                        }
+                            
+                        else if (character_chosen[0] == "Cersei Lannister" &&  character_chosen[1] == "Samwell Tarly") || (character_chosen[0] == "Samwell Tarly" &&  character_chosen[1] == "Cersei Lannister") {
+                            result_battle = "Cersei l'emporte face à Samwell"
+                        }
+                            
+                        else if (character_chosen[0] == "Cersei Lannister" &&  character_chosen[1] == "Ellaria Sand") || (character_chosen[0] == "Ellaria Sand" &&  character_chosen[1] == "Cersei Lannister") {
+                            result_battle = "Cersei l'emporte face à Ellaria"
+                        }
+                            
+                            
+                        else if (character_chosen[0] == "Jaime Lannister" &&  character_chosen[1] == "Tyrion Lannister") || (character_chosen[0] == "Tyrion Lannister" &&  character_chosen[1] == "Jaime Lannister") {
+                            result_battle = "Tyrion l'emporte face à Jaime"
+                        }
+                        
+                        else{
+                            result_battle = "Match nul !"
+                        }
+
+                        
                     }
                     else if character_chosen.count > 2{
                         reset()
                     }
                 }
+                
             }
         }
         
