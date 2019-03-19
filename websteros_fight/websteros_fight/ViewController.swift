@@ -10,19 +10,31 @@ import UIKit
 
 class ViewController: UIViewController {
     var characters_list = ["Cersei Lannister", "Jaime Lannister", "Tyrion Lannister", "Sansa Stark", "Arya Stark", "Samwell Tarly", "Le Roi de la Nuit", "Ellaria Sand", "Jon Snow"]
-
- 
+    var characters_chosen = [] as NSArray
+    var _currentCharacter : Double = 0 {
+        didSet{
+            ui_result.text = "\(_currentCharacter)"
+        }
+    }
     @IBOutlet weak var ui_result: UILabel!
     
     @IBAction func ui_launch() {
     }
+    
+    
+ 
     @IBAction func digit_character(_ sender: UIButton) {
-        ui_result.text = "\(sender.tag)"
+         _currentCharacter = _currentCharacter * 10 + Double(sender.tag)
         for (index, character) in characters_list.enumerated() {
             if sender.tag == index{
                 ui_result.text = characters_list[index]
             }
         }
+        
+    }
+    
+    @IBAction func addCharacter() {
+        
     }
     
     override func viewDidLoad() {
