@@ -181,17 +181,17 @@
                                     <action selector="ui_launch" destination="BYZ-38-t0r" eventType="touchUpInside" id="WmV-Nl-ynk"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sUC-uz-Oct">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ir-GS-ha6">
                                 <rect key="frame" x="188" y="608" width="163" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.12719342110000001" green="0.72063070539999996" blue="0.086421437559999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="SavoyeLetPlain" family="Savoye LET" pointSize="25"/>
-                                <state key="normal" title="Ajouter personnage">
+                                <state key="normal" title="Reset">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="addCharacter" destination="BYZ-38-t0r" eventType="touchUpInside" id="lMD-7O-r3u"/>
-                                    <action selector="ui_launch" destination="BYZ-38-t0r" eventType="touchUpInside" id="rV2-u2-Caf"/>
+                                    <action selector="reset" destination="BYZ-38-t0r" eventType="touchUpInside" id="W1T-cL-6Q1"/>
+                                    <action selector="ui_launch" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rw7-Un-K6n"/>
                                 </connections>
                             </button>
                         </subviews>
